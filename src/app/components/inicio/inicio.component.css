@@ -1,0 +1,5 @@
+.fondo{
+    background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.7)), url('../../../assets/img/fondo.jpg');
+    background-position: center;
+    background-size: cover;
+}

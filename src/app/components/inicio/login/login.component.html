@@ -1,0 +1,56 @@
+<div class="bg-white w-[40vw] min-h-[40vh] rounded-md font-semibold">
+  <h1 class="text-4xl text-center p-2">Log In</h1>
+  <form
+    action=""
+    [formGroup]="login"
+    (ngSubmit)="log()"
+    class="w-full min-h-[37vh] p-2 flex flex-col justify-evenly items-center"
+  >
+    <div class="flex flex-col justify-around items-center h-[15vh] w-full">
+      <input
+        type="text"
+        formControlName="usuario"
+        placeholder="Usuario"
+        class="p-2 shadow-md bg-zinc-200 w-3/5 rounded-md text-center"
+      />
+      <span
+        class="text-red-500"
+        *ngIf="
+          this.login.get('usuario')?.invalid &&
+          this.login.get('usuario')?.touched
+        "
+      >
+      
+      no va pone na dique
+      </span>
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Contrase;a"
+        class="p-2 shadow-md bg-zinc-200 w-3/5 rounded-md text-center"
+      />
+      <span
+        class="text-red-500"
+        *ngIf="
+          this.login.get('password')?.invalid &&
+          this.login.get('password')?.touched
+        "
+      >
+      y eso pana
+      </span>
+    </div>
+    <div class="w-full flex justify-evenly text-white">
+      <button
+        type="submit"
+        class="py-3 px-8 drop-shadow-sm bg-slate-800 rounded-sm"
+        [disabled]="this.login.invalid" [class.effect]="this.login.invalid"
+      >
+        Aceptar
+      </button>
+      <button class="py-3 px-8 drop-shadow-sm bg-slate-800 rounded-sm">
+        Volver
+      </button>
+    </div>
+    <a routerLink="/register" class="border-b-2">Crear cuenta</a>
+  </form>
+</div>
